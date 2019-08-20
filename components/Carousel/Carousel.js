@@ -17,3 +17,45 @@
     <div class="right-button"> > </div>
   </div>
 */
+let picCounter = 0;
+const carouselCont = document.querySelector('.carousel-container');
+
+function Carousel() {
+  const carouselDiv = document.createElement('div');
+  carouselDiv.classList.add('carousel');
+
+    const leftBtn = document.createElement('div')
+    leftBtn.textContent = ' < ';
+    leftBtn.addEventListener('click', (event)=> {
+      picCounter--;
+      
+      
+    })
+
+    const image1 = document.createElement('img');
+    image1.src = './assets/carousel/mountains.jpeg';
+    const image2 = document.createElement('img');
+    image2.src = './assets/carousel/computer.jpeg';
+    const image3 = document.createElement('img');
+    image3.src = './assets/carousel/trees.jpeg';
+    const image4 = document.createElement('img');
+    image4.src = './assets/carousel/turntable.jpeg';
+
+    const rightBtn = document.createElement('div')
+    rightBtn.textContent = ' > ';
+    rightBtn.addEventListener('click', (event)=>{
+      picCounter++;
+    })
+
+  carouselDiv.appendChild(leftBtn);
+  carouselDiv.appendChild(image1);
+  carouselDiv.appendChild(image2);
+  carouselDiv.appendChild(image3);
+  carouselDiv.appendChild(image4);
+  carouselDiv.appendChild(rightBtn);
+  
+  return carouselDiv;
+}
+
+const carouselComp = Carousel();
+carouselCont.appendChild(carouselComp);
